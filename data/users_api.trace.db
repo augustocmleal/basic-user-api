@@ -1,0 +1,132 @@
+2019-11-03 20:32:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE PERFIL( ID INT AUTO_INCREMENT PRIMARY KEY, NOME VARCHAR(30) NOT NULL, DESCRICAO VARCHAR(100) ) INSERT[*] INTO CARGO (NOME) VALUES ('Gerente'), ('Supervisor'), ('Administrativo') "; SQL statement:
+CREATE TABLE perfil( id INT AUTO_INCREMENT PRIMARY KEY, nome VARCHAR(30) NOT NULL, descricao VARCHAR(100) ) INSERT INTO cargo (nome) VALUES ('Gerente'), ('Supervisor'), ('Administrativo') [42000-199]
+2019-11-03 20:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CARGO" already exists; SQL statement:
+CREATE TABLE cargo ( id INT AUTO_INCREMENT PRIMARY KEY, nome VARCHAR(60) NOT NULL, descricao VARCHAR(100) ) [42101-199]
+2019-11-03 20:33:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO PERFIL (NOME) VALUE[*] ('Administrador'), ('Comum') "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM, TABLE, VALUES"; SQL statement:
+INSERT INTO perfil (nome) VALUE ('Administrador'), ('Comum') [42001-199]
+2019-11-03 20:34:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO user (name, cpf, sexo, data_nasc, username, password) VALUES ('Augusto Leal', '12236598744', 'M', '01-02-1987', 'augustoml', 'abc123),
+('Agnys Alves', '49465823655', 'F', '12-09-1987', 'agnysap', 'abc123[*]');"; SQL statement:
+INSERT INTO user (name, cpf, sexo, data_nasc, username, password) VALUES ('Augusto Leal', '12236598744', 'M', '01-02-1987', 'augustoml', 'abc123),
+('Agnys Alves', '49465823655', 'F', '12-09-1987', 'agnysap', 'abc123'); [42000-199]
+2019-11-03 20:37:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO user (name, cpf, sexo, data_nasc, username, password) VALUES ('Augusto Leal', '12236598744', 'M', parsedatetime('02-01-1987', 'dd-MM-yyyy'), 'augustoml', 'abc123),
+('Agnys Alves', '49465823655', 'F', parsedatetime('12-09-1987', 'dd-MM-yyyy', 'agnysap', 'abc123[*]');"; SQL statement:
+INSERT INTO user (name, cpf, sexo, data_nasc, username, password) VALUES ('Augusto Leal', '12236598744', 'M', parsedatetime('02-01-1987', 'dd-MM-yyyy'), 'augustoml', 'abc123),
+('Agnys Alves', '49465823655', 'F', parsedatetime('12-09-1987', 'dd-MM-yyyy', 'agnysap', 'abc123'); [42000-199]
+2019-11-03 20:38:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "NAME" not found; SQL statement:
+INSERT INTO user (name, cpf, sexo, data_nasc, username, password) VALUES ('Augusto Leal', '12236598744', 'M', parsedatetime('02-01-1987', 'dd-MM-yyyy'), 'augustoml', 'abc123'), ('Agnys Alves', '49465823655', 'F', parsedatetime('12-09-1987', 'dd-MM-yyyy', 'agnysap', 'abc123') [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.parseColumn(Parser.java:1377)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1362)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1731)
+	at org.h2.command.Parser.parseInsert(Parser.java:1684)
+	at org.h2.command.Parser.parsePrepared(Parser.java:891)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:605)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.runScripts(DataSourceInitializer.java:202)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:119)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:89)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:37)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.publishEventIfRequired(DataSourceInitializedPublisher.java:99)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.postProcessAfterInitialization(DataSourceInitializedPublisher.java:90)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1807)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at br.com.augustoleal.basic_user_api.Application.main(Application.java:10)
+2019-11-03 20:39:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO USER (NOME, CPF, SEXO, DATA_NASC, USERNAME, PASSWORD) VALUES ('Augusto Leal', '12236598744', 'M', PARSEDATETIME('02-01-1987', 'dd-MM-yyyy'), 'augustoml', 'abc123'), ('Agnys Alves', '49465823655', 'F', PARSEDATETIME('12-09-1987', 'dd-MM-yyyy', 'agnysap', 'abc123') [*]"; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO user (nome, cpf, sexo, data_nasc, username, password) VALUES ('Augusto Leal', '12236598744', 'M', parsedatetime('02-01-1987', 'dd-MM-yyyy'), 'augustoml', 'abc123'), ('Agnys Alves', '49465823655', 'F', parsedatetime('12-09-1987', 'dd-MM-yyyy', 'agnysap', 'abc123') [42001-199]
+2019-11-03 20:44:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "02-01-1987"; SQL statement:
+INSERT INTO user (nome, cpf, sexo, data_nasc, username, password) VALUES ('Augusto Leal', '12236598744', 'M', '02-01-1987', 'augustoml', 'abc123'), ('Agnys Alves', '49465823655', 'F', '12-09-1987', 'agnysap', 'abc123') -- ('Augusto Leal', '12236598744', 'M', '02-01-1987', 'augustoml', 'abc123') [22007-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:455)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:75)
+	at org.h2.value.Value.convertToDate(Value.java:1059)
+	at org.h2.value.Value.convertTo(Value.java:774)
+	at org.h2.value.Value.convertTo(Value.java:735)
+	at org.h2.table.Column.convert(Column.java:199)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:164)
+	at org.h2.command.dml.Insert.update(Insert.java:132)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:133)
+	at org.h2.command.Command.executeUpdate(Command.java:267)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:233)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:605)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.runScripts(DataSourceInitializer.java:202)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:119)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:89)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:37)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.publishEventIfRequired(DataSourceInitializedPublisher.java:99)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.postProcessAfterInitialization(DataSourceInitializedPublisher.java:90)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1807)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at br.com.augustoleal.basic_user_api.Application.main(Application.java:10)
+Caused by: java.lang.IllegalArgumentException: 2-1-1987
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:373)
+	at org.h2.value.ValueDate.parse(ValueDate.java:73)
+	... 44 more
