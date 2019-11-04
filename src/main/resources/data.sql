@@ -25,6 +25,7 @@ CREATE TABLE user (
 	password VARCHAR(6) NOT NULL,
 	cargo INT NOT NULL,
 	perfil INT NOT NULL,
+	status VARCHAR(1) NOT NULL DEFAULT 'A',
 	FOREIGN KEY (cargo) REFERENCES cargo(id),
 	FOREIGN KEY (perfil) REFERENCES perfil(id),
 	CONSTRAINT UC_user UNIQUE (cpf,nome)

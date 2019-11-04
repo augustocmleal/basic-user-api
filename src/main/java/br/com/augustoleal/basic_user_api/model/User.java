@@ -1,8 +1,9 @@
 package br.com.augustoleal.basic_user_api.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import br.com.augustoleal.basic_user_api.commons.enums.SexoEnum;
+import br.com.augustoleal.basic_user_api.commons.enums.StatusEnum;
+import br.com.augustoleal.basic_user_api.commons.enums.converters.SexoEnumConverter;
+import br.com.augustoleal.basic_user_api.commons.enums.converters.StatusEnumConverter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,10 +41,11 @@ public class User {
     private String cpf;
 
     @Column(name = "dataNasc")
-    private Date dataNasc;
+    private LocalDate dataNasc;
 
     @Column(name = "sexo")
-    private String sexo;
+    @Convert(converter = SexoEnumConverter.class)
+    private SexoEnum sexo;
 
     @Column(name = "username")
     private String username;
@@ -54,5 +60,9 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "perfil")
     private Perfil perfil;
+
+    @Column(name = "status")
+    @Convert(converter = StatusEnumConverter.class)
+    private StatusEnum status;
 
 }
