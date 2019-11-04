@@ -30,14 +30,14 @@ CREATE TABLE user (
 );
 
 
-INSERT INTO cargo (nome) VALUES ('Gerente'), ('Supervisor'), ('Administrativo');
+INSERT INTO cargo (nome, descricao) VALUES ('Gerente', 'Descricao Gerente'), ('Supervisor', 'Descricao Supervisor'), ('Administrativo', 'Descricao Administrativo');
 
-INSERT INTO perfil (nome) VALUES ('Administrador'), ('Comum');
+INSERT INTO perfil (nome, descricao) VALUES ('Administrador', 'Descricao Administrador'), ('Comum', 'Descricao Comum');
 
 INSERT INTO user (nome, cpf, sexo, data_nasc, cargo, perfil) VALUES 
-('Augusto Leal', '12236598744', 'M', parsedatetime('02-01-1987', 'dd-MM-yyyy'), 
+('Augusto Leal', '03663790037', 'M', parsedatetime('02-01-1987', 'dd-MM-yyyy'), 
 (SELECT id FROM cargo WHERE nome = 'Gerente'),
 (SELECT id FROM perfil WHERE nome = 'Administrador')),
-('Agnys Alves', '49465823655', 'F', parsedatetime('12-09-1987', 'dd-MM-yyyy'),
+('Agnys Alves', '58863353077', 'F', parsedatetime('12-09-1987', 'dd-MM-yyyy'),
 (SELECT id FROM cargo WHERE nome = 'Supervisor'),
 (SELECT id FROM perfil WHERE nome = 'Comum'));

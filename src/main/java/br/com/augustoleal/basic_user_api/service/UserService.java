@@ -67,6 +67,10 @@ public class UserService {
 
     }
 
+    public User findByNomeAndCpf(String nome, String cpf) {
+	return userRepository.findByNomeAndCpf(nome, cpf);
+    }
+
     public List<User> listUsers(User user) {
 
 	return userJdbcRepository.findAllWithFilters(user);

@@ -48,8 +48,16 @@ public class UserController extends AbstractController {
     private PerfilService perfilService;
 
     @PostMapping
-    public GenericRestResponse addUser(@RequestBody @Valid User user) {
+    public GenericRestResponse addUser(@Valid @RequestBody User user) {
 	logger.info("------ Início do método - addUser() ------");
+
+	User userExists = userService.findByNomeAndCpf(user.getNome(), user.getCpf());
+
+	if (userExists != null) {
+	    logger.info("------ Fim do método - addUser() ------");
+	    return new GenericRestResponse(generateError(Constants.MSG_ERROR_NOME_CPF_ALREADY_EXISTS));
+	}
+
 	userService.addUser(user);
 	logger.info("------ Fim do método - addUser() ------");
 	return new GenericRestResponse(generateSuccess(Constants.MSG_SUCCESS));
@@ -57,7 +65,7 @@ public class UserController extends AbstractController {
     }
 
     @PutMapping
-    public GenericRestResponse updateUser(@RequestBody User user) {
+    public GenericRestResponse updateUser(@Valid @RequestBody User user) {
 	logger.info("------ Início do método - updateUser() ------");
 	userService.updateUser(user);
 	logger.info("------ Fim do método - updateUser() ------");

@@ -17,4 +17,6 @@ public interface UserRepository extends AbstractRepository<User, Integer> {
 
     @Query("select u  from User u where u.cpf like '0%'")
     public List<User> findCpfStartWithZero();
+
+    public User findByNomeAndCpf(@Param("nome") String nome, @Param("cpf") String cpf);
 }

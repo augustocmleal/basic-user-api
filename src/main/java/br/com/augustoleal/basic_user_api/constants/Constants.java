@@ -11,5 +11,7 @@ public interface Constants {
     public static final String MSG_ERROR_USUARIO_INEXISTENTE = "Usuário não existe";
     public static final String MSG_ERROR_USUARIO_INATIVO = "Usuário já está INATIVO";
 
+    public static final String MSG_ERROR_NOME_CPF_ALREADY_EXISTS = "Nome e cpf já existem no sistema";
+
     public static final String MSG_EMPTY_LIST = "Sua consulta não retornou resultados";
 }

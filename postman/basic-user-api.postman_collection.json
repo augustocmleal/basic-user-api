@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "e6a0128d-0c05-40df-b92c-7fe06b3daa50",
+		"name": "Basic User API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cargo",
+			"item": [
+				{
+					"name": "Add Cargo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Cargo Teste\",\r\n    \"descricao\": \"Descricao Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/cargo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cargo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Cargo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cargo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cargo"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Perfil",
+			"item": [
+				{
+					"name": "List Perfis Paging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/perfil",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"perfil"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Perfil",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Perfil Teste\",\r\n    \"descricao\": \"Descricao Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/perfil",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"perfil"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "List Users Paging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user?page=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Users Filtering",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/filtered?nome=Augusto&cpf=03663790037&cargo=Gerente&perfil=Administrador&status=ATIVO",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"filtered"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Augusto"
+								},
+								{
+									"key": "cpf",
+									"value": "03663790037"
+								},
+								{
+									"key": "cargo",
+									"value": "Gerente"
+								},
+								{
+									"key": "perfil",
+									"value": "Administrador"
+								},
+								{
+									"key": "status",
+									"value": "ATIVO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Usuário X1 - teste\",\r\n    \"cpf\": \"67079925037\",\r\n    \"dataNasc\": \"1987-09-12\",\r\n    \"sexo\": \"MASCULINO\",\r\n    \"username\": \"usuariox1\",\r\n    \"password\": \"abc123\",\r\n    \"cargo\": {\r\n        \"id\": 2\r\n    },\r\n    \"perfil\": {\r\n        \"id\": 2\r\n    },\r\n    \"status\": \"ATIVO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\": 3,\r\n    \"nome\": \"Usuário X1 - updated\",\r\n    \"cpf\": \"67079925037\",\r\n    \"dataNasc\": \"1987-09-12\",\r\n    \"sexo\": \"MASCULINO\",\r\n    \"username\": \"usuariox1\",\r\n    \"password\": \"abc123\",\r\n    \"cargo\": {\r\n        \"id\": 2\r\n    },\r\n    \"perfil\": {\r\n        \"id\": 2\r\n    },\r\n    \"status\": \"ATIVO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/disable/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"disable",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Adult Female User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/femaleEighteenPlus",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"femaleEighteenPlus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Cpf Starts With Zero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/cpfStartWithZero",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"cpfStartWithZero"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
