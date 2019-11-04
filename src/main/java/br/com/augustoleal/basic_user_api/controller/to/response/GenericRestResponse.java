@@ -5,9 +5,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class GenericUserRestResponse extends AbstractRestResponse{
+public class GenericRestResponse extends AbstractRestResponse{
 
-	public GenericUserRestResponse(Result result) {
+	public GenericRestResponse(Result result) {
 		super(result);
 	}
 }

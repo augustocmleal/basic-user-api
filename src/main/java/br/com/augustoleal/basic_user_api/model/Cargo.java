@@ -31,4 +31,8 @@ public class Cargo {
     @Column(name = "descricao")
     private String descricao;
 
+    public Cargo(String nome) {
+	this.nome = nome;
+    }
+
 }

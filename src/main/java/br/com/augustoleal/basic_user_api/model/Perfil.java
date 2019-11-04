@@ -31,4 +31,8 @@ public class Perfil {
     @Column(name = "descricao")
     private String descricao;
 
+    public Perfil(String nome) {
+	this.nome = nome;
+    }
+
 }

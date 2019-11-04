@@ -1,6 +1,6 @@
 package br.com.augustoleal.basic_user_api.controller.to.response;
 
-import org.springframework.data.domain.Page;
+import java.util.List;
 
 import br.com.augustoleal.basic_user_api.model.User;
 import lombok.Getter;
@@ -10,11 +10,15 @@ import lombok.Setter;
 @Setter
 public class ListUserRestResponse extends AbstractRestResponse {
 
-    private Page<User> users;
+    private List<User> users;
 
-    public ListUserRestResponse(Result result, Page<User> users) {
+    public ListUserRestResponse(Result result, List<User> users) {
 	super(result);
 	this.users = users;
+    }
+
+    public ListUserRestResponse(Result result) {
+	super(result);
     }
 
 }

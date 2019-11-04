@@ -21,8 +21,6 @@ CREATE TABLE user (
 	cpf VARCHAR(11) NOT NULL,
 	sexo VARCHAR(1) NOT NULL,
 	data_nasc Date NOT NULL,
-	username VARCHAR(30) NOT NULL,
-	password VARCHAR(6) NOT NULL,
 	cargo INT NOT NULL,
 	perfil INT NOT NULL,
 	status VARCHAR(1) NOT NULL DEFAULT 'A',
@@ -36,10 +34,10 @@ INSERT INTO cargo (nome) VALUES ('Gerente'), ('Supervisor'), ('Administrativo');
 
 INSERT INTO perfil (nome) VALUES ('Administrador'), ('Comum');
 
-INSERT INTO user (nome, cpf, sexo, data_nasc, username, password, cargo, perfil) VALUES 
-('Augusto Leal', '12236598744', 'M', parsedatetime('02-01-1987', 'dd-MM-yyyy'), 'augustoml', 'abc123', 
+INSERT INTO user (nome, cpf, sexo, data_nasc, cargo, perfil) VALUES 
+('Augusto Leal', '12236598744', 'M', parsedatetime('02-01-1987', 'dd-MM-yyyy'), 
 (SELECT id FROM cargo WHERE nome = 'Gerente'),
 (SELECT id FROM perfil WHERE nome = 'Administrador')),
-('Agnys Alves', '49465823655', 'F', parsedatetime('12-09-1987', 'dd-MM-yyyy'), 'agnysap', 'abc123',
+('Agnys Alves', '49465823655', 'F', parsedatetime('12-09-1987', 'dd-MM-yyyy'),
 (SELECT id FROM cargo WHERE nome = 'Supervisor'),
 (SELECT id FROM perfil WHERE nome = 'Comum'));

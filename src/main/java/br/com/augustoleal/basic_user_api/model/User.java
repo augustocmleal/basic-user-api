@@ -1,5 +1,6 @@
 package br.com.augustoleal.basic_user_api.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -27,7 +28,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 341301446830325810L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,12 +49,6 @@ public class User {
     @Column(name = "sexo")
     @Convert(converter = SexoEnumConverter.class)
     private SexoEnum sexo;
-
-    @Column(name = "username")
-    private String username;
-
-    @Column(name = "password")
-    private String password;
 
     @ManyToOne
     @JoinColumn(name = "cargo")
