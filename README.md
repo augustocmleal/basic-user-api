@@ -10,7 +10,7 @@
 
 - *For this project was used Eclipse [Neon 3](https://www.eclipse.org/downloads/packages/release/neon/3)*
 
-- Install [Lombok](https://projectlombok.org/downloads/lombok.jar) na sua IDE. (Em caso de dúvidas, consulte [Projeto Lombok](https://projectlombok.org/))
+- Install [Lombok](https://projectlombok.org/downloads/lombok.jar). (In case of doubts, consult [Lombok Project](https://projectlombok.org/))
 
 - Install [git](https://git-scm.com/book/pt-br/v1/Primeiros-passos-Instalando-Git)
 
