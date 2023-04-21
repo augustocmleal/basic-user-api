@@ -1,3 +1,5 @@
+[Português Brasileiro](https://github.com/augustocmleal/basic-user-api/blob/master/README-PT.md)
+
 # BASIC-USER-API 
 
 ## 1. Setup
