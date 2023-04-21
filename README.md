@@ -1,4 +1,5 @@
-# BASIC-USER-API [](https://badgen.net/badge/Lang:/Portuguese/green?icon=github)
+[(Portugues)](https://badgen.net/badge/Lang:/Portuguese/green?icon=github)
+# BASIC-USER-API 
 
 ## 1. Configuração
 
