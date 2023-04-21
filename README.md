@@ -1,13 +1,9 @@
-[(Portugues)](https://badgen.net/badge/Lang:/Portuguese/green?icon=github)
 # BASIC-USER-API 
+(Versão em português abaixo)
 
-## 1. Configuração
+## 1. Setup
 
-#### 1.1. Visão geral
-
-
-
-#### 1.2. Environment
+#### 1.1 Environment
 - Install [java (version 8)](https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
 
 - Chose your prefered IDE.
@@ -18,7 +14,7 @@
 
 - Install [git](https://git-scm.com/book/pt-br/v1/Primeiros-passos-Instalando-Git)
 
-#### 1.3. Project
+#### 1.2 Project
 
 - Project [checkout](https://git-scm.com/docs/git-checkout) in your prefered directory
 
@@ -61,11 +57,7 @@ Execute the main class `br/com/augustoleal/basic_user_api/Application.java`
 
 ## 1. Configuração
 
-#### 1.1. Visão geral
-
-
-
-#### 1.2. Ambiente
+#### 1.1 Ambiente
 - Instalar o [java (versão 8)](https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
 
 - Escolher IDE de sua preferencia.
@@ -76,7 +68,7 @@ Execute the main class `br/com/augustoleal/basic_user_api/Application.java`
 
 - Instalar o [git](https://git-scm.com/book/pt-br/v1/Primeiros-passos-Instalando-Git)
 
-#### 1.3. Projeto
+#### 1.2 Projeto
 
 - Fazer [checkout](https://git-scm.com/docs/git-checkout) do projeto num diretório local
 
