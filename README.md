@@ -1,4 +1,4 @@
-[Português Brasileiro](https://github.com/augustocmleal/basic-user-api/blob/master/README-PT.md)
+*[Clique para ver a versão em Português Brasileiro](https://github.com/augustocmleal/basic-user-api/blob/master/README-PT.md)
 
 # BASIC-USER-API 
 
